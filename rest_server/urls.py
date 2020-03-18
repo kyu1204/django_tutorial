@@ -15,18 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
 from rest_framework_swagger.views import get_swagger_view
-from member.views import MemberViewSet
-
-
-app_name = 'member'
-router = routers.DefaultRouter()
-router.register('members', MemberViewSet)
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/doc/', get_swagger_view(title='Rest API Documents')),
-    path('api/v1/', include((router.urls, 'member'), namespace='api')),
+path('api/doc/', get_swagger_view(title='Rest API Documents')),
+    path('api/', include('api.urls'))
 ]
