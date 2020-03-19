@@ -1,4 +1,4 @@
-"""rest_server URL Configuration
+"""blog_server URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework_swagger.views import get_swagger_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-path('api/doc/', get_swagger_view(title='Rest API Documents')),
-    path('api/', include('api.urls'))
+    path('blog/', include('blog.urls')),
+    # path('accounts/', include('account.urls')),
 ]

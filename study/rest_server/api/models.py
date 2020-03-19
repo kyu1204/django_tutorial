@@ -11,3 +11,8 @@ class Post(models.Model):
 
     def __str__(self):
         return '[{}] {}'.format(self.user.username, self.title)
+
+
+class Member(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    birthday = models.IntegerField(default=19000101)
