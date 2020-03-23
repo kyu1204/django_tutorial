@@ -18,3 +18,9 @@ study/django_tutorial/myapp/migrations/__pycache__
 study/user_tutorial/member/__pycache__
 study/user_tutorial/member/migrations/__pycache__
 study/user_tutorial/user_tutorial/__pycache__
+study/stock_server/config
+study/stock_server/stock_server/__pycache__
+study/stock_server/stock/__pycache__
+study/stock_server/stock/migrations/__pycache__
+study/stock_server/account/__pycache__
+study/stock_server/account/migrations/__pycache__
