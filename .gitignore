@@ -25,3 +25,9 @@ study/stock_server/stock/migrations/__pycache__
 study/stock_server/account/__pycache__
 study/stock_server/account/migrations/__pycache__
 live/stock_server/config
+live/stock_server/account/__pycache__
+live/stock_server/account/migrations/__pycache__
+live/stock_server/stock/__pycache__
+live/stock_server/stock/migrations/__pycache__
+live/stock_server/stock_server/__pycache__
+live/stock_server/logs
