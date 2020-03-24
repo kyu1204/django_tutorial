@@ -14,5 +14,3 @@ class Member(models.Model):
         self.user = user
         self.name = name
         self. birthday = birthday
-        user.save()
-        self.save()
