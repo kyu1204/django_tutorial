@@ -31,7 +31,7 @@ class SignUp(APIView):
             return Response({'result': True})
 
         except Exception as e:
-            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': e.__str__()})
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': 'server_error'})
 
 
 class IdCheck(APIView):
@@ -45,7 +45,7 @@ class IdCheck(APIView):
                 return Response({"result": idcheck})
 
         except Exception as e:
-            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': e.__str__()})
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': 'server_error'})
 
 
 class SignIn(APIView):
@@ -57,8 +57,7 @@ class SignIn(APIView):
             _id = request.data['id']
             pw = request.data['password']
 
-            UserModel = get_user_model()
-            user = UserModel._default_manager.get_by_natural_key(_id)
+            user = User.objects.get_by_natural_key(_id)
 
             if user is None:
                 return Response(status=status.HTTP_400_BAD_REQUEST, data={"result": None})
@@ -77,7 +76,7 @@ class SignIn(APIView):
                 return Response(status=status.HTTP_400_BAD_REQUEST, data={'message': 'not found paramas'})
 
         except Exception as e:
-            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': e.__str__()})
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': 'server_error'})
 
 
 class SignOut(APIView):
@@ -87,4 +86,4 @@ class SignOut(APIView):
             return Response({"result": True})
 
         except Exception as e:
-            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': e.__str__()})
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR, data={'message': 'server_error'})
